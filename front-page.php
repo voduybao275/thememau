@@ -2,14 +2,57 @@
 <main>
     <div class="main d-flex">
         <div class="left_sibar">
+            <?php $terms = get_terms( array(
+            'taxonomy' => 'code-cate',
+            'hide_empty' => false, 
+        ) );
+
+        if ( ! empty( $terms ) && ! is_wp_error( $terms ) ) {
+            echo '<ul class="ul-menu-list"><li><a href="'.esc_url( get_permalink(13) ).'">すべて</a></li>';
+            $i="0";
+            $active="";
+            foreach ( $terms as $term ) {
+                $i++;
+                if($i==1){
+                    $active="active";
+                }else{
+                    $active="";
+                }
+                echo '<li><a href="'.get_term_link( $term ) .'" class="'.$active.'">' . $term->name . '</a>'; 
+                $args           = array(
+                    'post_status'    => 'publish',
+                    'post_type'      => 'code-list',
+                    'orderby'        => 'DATE',
+                    'order'          => 'DESC',
+                    'tax_query' => array(
+                        array(
+                            'taxonomy' => 'code-cate',
+                            'field'    => 'term_id',
+                            'terms'    => $term->term_id,
+                        ),
+                    ),
+                );
+                $query = new WP_Query($args);
+                if ($query->have_posts()) :
+                    echo '<ul>';
+                    while ($query->have_posts()) : $query->the_post();
+                        echo '<li><a href="">'.get_the_title().'</a></li>';
+                    endwhile;
+                    echo '</ul>';
+                endif;
+                echo '</li>';
+            }
+            echo '</ul>';
+        }?>
+
             <?php 
-            wp_nav_menu( array(
+            /*wp_nav_menu( array(
                 'theme_location'  => 'header-top',
                 'menu'            => 'Menu left',
                 'container'      => 'nav',           // Thẻ bao quanh menu (thường là <nav>)
                 'container_class'=> 'main-navigation',// Class của thẻ bao quanh
                 'menu_class'     => 'ul-menu-list',  // Class của thẻ <ul> bên trong
-            ) ); ?>
+            ) ); */?>
            
         </div>
         <div class="main_content">
