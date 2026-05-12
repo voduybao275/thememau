@@ -1,0 +1,115 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+ul, ol {
+  list-style: none; }
+
+a {
+  text-decoration: none;
+  color: #000; }
+
+html {
+  font-size: 10px; }
+
+body {
+  font-size: 1.6rem; }
+
+p {
+  font-size: 1.6rem; }
+
+.d-flex {
+  display: flex;
+  flex-wrap: wrap; }
+
+.main {
+  background: #1e3a64; }
+  .main_content {
+    width: calc(100% - 30rem);
+    padding: 1.5rem; }
+
+.breadcrumb {
+  display: flex; }
+  .breadcrumb li {
+    position: relative;
+    padding-right: 3rem;
+    margin-right: 1rem; }
+    .breadcrumb li:last-child {
+      padding-right: 0;
+      margin-right: 0; }
+      .breadcrumb li:last-child::before {
+        content: none; }
+    .breadcrumb li::before {
+      content: ">";
+      position: absolute;
+      top: 0;
+      right: 0;
+      color: #FFF;
+      font-size: 3rem;
+      font-weight: 400;
+      line-height: 150%;
+      letter-spacing: 0; }
+    .breadcrumb li * {
+      color: #FFF;
+      font-size: 3rem;
+      font-weight: 400;
+      line-height: 150%;
+      letter-spacing: 0; }
+
+.menu_list__head {
+  border-bottom: #FFF solid 1px;
+  gap: 1rem;
+  margin-bottom: 2rem; }
+  .menu_list__head li a {
+    color: #FFF;
+    font-size: 2rem;
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: 0;
+    display: inline-block;
+    min-width: 10rem;
+    background: #2b528c;
+    text-align: center;
+    border-radius: 1rem 1rem 0 0;
+    padding: .5rem 0; }
+    .menu_list__head li a.active {
+      background: #447acb; }
+
+.left_sibar {
+  width: 30rem;
+  border-right: #FFF solid 1px;
+  padding: 1rem; }
+  .left_sibar li {
+    margin-bottom: 1rem; }
+    .left_sibar li:last-child {
+      margin-bottom: 0; }
+    .left_sibar li a {
+      color: #FFF;
+      font-size: 1.6rem;
+      letter-spacing: 0;
+      line-height: 175%;
+      font-weight: 400;
+      display: block;
+      background: #2b528c;
+      border-radius: 1.5rem;
+      padding: 1rem; }
+    .left_sibar li ul {
+      margin-top: 1rem;
+      margin-left: 1rem;
+      display: none; }
+    .left_sibar li.active ul {
+      display: block; }
+
+.tabs-content .item {
+  display: none; }
+  .tabs-content .item.active {
+    display: block; }
+  .tabs-content .item * {
+    color: #FFF;
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: 0; }
+
+/*# sourceMappingURL=style.css.map */

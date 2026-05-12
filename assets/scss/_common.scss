@@ -1,0 +1,46 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul,ol{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: #000;
+}
+
+html{
+    font-size: 10px;
+}
+
+body{
+    font-size: 1.6rem;
+}
+
+p{
+    font-size: 1.6rem;
+}
+
+.d-flex{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+@mixin setting_text($cl, $fz, $fw, $lh, $lp) {
+  color: $cl;
+  font-size: $fz;
+  font-weight: $fw;
+  line-height: $lh;
+  letter-spacing: $lp;
+}
+
+@mixin before($w, $h) {
+    content: "";
+    position: absolute;
+    width: $w;
+    height: $h;
+}

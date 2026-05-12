@@ -1,0 +1,96 @@
+.main{
+    background: #1e3a64;
+    &_content{
+        width: calc(100% - 30rem);
+        padding: 1.5rem;
+    }
+}
+
+.breadcrumb {
+    display: flex;
+    li {
+        position: relative;
+        padding-right: 3rem;
+        margin-right: 1rem;
+        &:last-child{
+            padding-right: 0;
+            margin-right: 0;
+            &::before{
+                content: none ;
+            }
+        }
+        &::before{
+            content: ">";
+            position: absolute;
+            top: 0;
+            right: 0;
+            @include setting_text(#FFF, 3rem, 400, 150%, 0);
+        }
+        *{
+            @include setting_text(#FFF, 3rem, 400, 150%, 0);
+        }
+    }
+}
+
+.menu_list__head {
+    border-bottom: #FFF solid 1px;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    li {
+        a{
+            @include setting_text(#FFF, 2rem, 400, 150%, 0);
+            display: inline-block;
+            min-width: 10rem;
+            background: #2b528c;
+            text-align: center;
+            border-radius: 1rem 1rem 0 0;
+            padding: .5rem 0;
+            &.active{
+                background: #447acb;
+            }
+        }
+    }
+}
+
+.left_sibar{
+    width: 30rem;
+    border-right: #FFF solid 1px;
+    padding: 1rem;
+    li{
+        margin-bottom: 1rem;
+        &:last-child{
+            margin-bottom: 0;
+        }
+        a{
+            color: #FFF;
+            font-size: 1.6rem;
+            letter-spacing: 0;
+            line-height: 175%;
+            font-weight: 400;
+            display: block;
+            background: #2b528c;
+            border-radius: 1.5rem;
+            padding: 1rem;
+        }
+
+        ul{
+            margin-top: 1rem;
+            margin-left: 1rem;
+            display: none;
+        }
+
+        &.active ul{
+            display: block;
+        }
+    }
+}
+
+.tabs-content .item{
+    display: none;
+    &.active{
+        display: block;
+    }
+    *{
+        @include setting_text(#FFF, 1.6rem, 400, 150%, 0);
+    }
+}
