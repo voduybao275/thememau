@@ -23,7 +23,7 @@
                         <li><a data-id="tab_1" href="#">Source</a></li>
                         <li><a data-id="tab_2" href="#">HTML</a></li>
                         <li><a data-id="tab_3" href="#">CSS</a></li>
-                        <li><button id="btn-copy" class="btn-copy">Copy Code</button></li>
+                        <li><button id="btn-copy" class="btn-copy">Copy</button></li>
                     </ul>
                     
                 </div>
